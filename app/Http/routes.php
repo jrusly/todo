@@ -21,6 +21,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', function () {
         return view('tasks', [
             'tasks' => Task::orderBy('created_at', 'asc')->get(),
+            'hasDone' => Task::orderBy('created_at', 'asc')->where('done', '1')->first() ? true : false,
             'done' => 0
         ]);
     });

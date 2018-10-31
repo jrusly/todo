@@ -62,7 +62,7 @@
                         </form>
                         @else
                         <form action="{{ url('done') }}" method="GET">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary" @if (!$hasDone) disabled @endif >
                                 Show only done tasks
                             </button>
                         </form>
